@@ -1,0 +1,1158 @@
+Timing Analyzer report for jpaf
+Mon May  4 20:14:41 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Slow 1200mV 85C Model Setup Summary
+  7. Slow 1200mV 85C Model Hold Summary
+  8. Slow 1200mV 85C Model Recovery Summary
+  9. Slow 1200mV 85C Model Removal Summary
+ 10. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 11. Slow 1200mV 85C Model Metastability Summary
+ 12. Slow 1200mV 0C Model Fmax Summary
+ 13. Slow 1200mV 0C Model Setup Summary
+ 14. Slow 1200mV 0C Model Hold Summary
+ 15. Slow 1200mV 0C Model Recovery Summary
+ 16. Slow 1200mV 0C Model Removal Summary
+ 17. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 18. Slow 1200mV 0C Model Metastability Summary
+ 19. Fast 1200mV 0C Model Setup Summary
+ 20. Fast 1200mV 0C Model Hold Summary
+ 21. Fast 1200mV 0C Model Recovery Summary
+ 22. Fast 1200mV 0C Model Removal Summary
+ 23. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Fast 1200mV 0C Model Metastability Summary
+ 25. Multicorner Timing Analysis Summary
+ 26. Board Trace Model Assignments
+ 27. Input Transition Times
+ 28. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 29. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 30. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 31. Setup Transfers
+ 32. Hold Transfers
+ 33. Report TCCS
+ 34. Report RSKM
+ 35. Unconstrained Paths Summary
+ 36. Clock Status Summary
+ 37. Unconstrained Input Ports
+ 38. Unconstrained Output Ports
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; jpaf                                                    ;
+; Device Family         ; MAX 10                                                  ;
+; Device Name           ; 10M50DAF484C7G                                          ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.14        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   2.0%      ;
+;     Processors 3-8         ;   1.9%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                         ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; Clock Name                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                            ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; clk_50MHz                                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50MHz }                                      ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q } ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q } ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q } ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q } ;
+; debouncer:deb_F|jk:ff1|q                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:deb_F|jk:ff1|q }                       ;
+; debouncer:deb_L|jk:ff1|q                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:deb_L|jk:ff1|q }                       ;
+; debouncer:deb_P|jk:ff1|q                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:deb_P|jk:ff1|q }                       ;
+; debouncer:deb_T|jk:ff1|q                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debouncer:deb_T|jk:ff1|q }                       ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q }      ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q }      ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q }      ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q }      ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q }      ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q }      ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                                             ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                                     ; Note                                                          ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+; 218.44 MHz  ; 218.44 MHz      ; debouncer:deb_T|jk:ff1|q                       ;                                                               ;
+; 254.78 MHz  ; 254.78 MHz      ; debouncer:deb_L|jk:ff1|q                       ;                                                               ;
+; 267.88 MHz  ; 267.88 MHz      ; debouncer:deb_F|jk:ff1|q                       ;                                                               ;
+; 310.95 MHz  ; 310.95 MHz      ; debouncer:deb_P|jk:ff1|q                       ;                                                               ;
+; 321.96 MHz  ; 321.96 MHz      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ;                                                               ;
+; 341.65 MHz  ; 250.0 MHz       ; clk_50MHz                                      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 349.28 MHz  ; 349.28 MHz      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ;                                                               ;
+; 352.73 MHz  ; 352.73 MHz      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ;                                                               ;
+; 370.51 MHz  ; 370.51 MHz      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ;                                                               ;
+; 387.15 MHz  ; 387.15 MHz      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ;                                                               ;
+; 497.27 MHz  ; 416.15 MHz      ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; limit due to minimum period restriction (tmin)                ;
+; 1129.94 MHz ; 416.15 MHz      ; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1131.22 MHz ; 416.15 MHz      ; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1140.25 MHz ; 416.15 MHz      ; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1154.73 MHz ; 416.15 MHz      ; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                                     ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; debouncer:deb_T|jk:ff1|q                       ; -3.578 ; -11.671       ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -2.931 ; -10.407       ;
+; debouncer:deb_L|jk:ff1|q                       ; -2.925 ; -9.323        ;
+; debouncer:deb_F|jk:ff1|q                       ; -2.733 ; -8.500        ;
+; debouncer:deb_P|jk:ff1|q                       ; -2.216 ; -6.426        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -2.106 ; -4.441        ;
+; clk_50MHz                                      ; -1.927 ; -4.173        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.863 ; -3.982        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.835 ; -3.622        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.699 ; -3.445        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.583 ; -3.373        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.115  ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.116  ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.123  ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.134  ; 0.000         ;
++------------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                                     ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 0.339 ; 0.000         ;
+; clk_50MHz                                      ; 0.340 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 0.347 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 0.347 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0.347 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 0.348 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 0.348 ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.362 ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.363 ; 0.000         ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.363 ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.363 ; 0.000         ;
+; debouncer:deb_F|jk:ff1|q                       ; 0.378 ; 0.000         ;
+; debouncer:deb_L|jk:ff1|q                       ; 0.378 ; 0.000         ;
+; debouncer:deb_P|jk:ff1|q                       ; 0.378 ; 0.000         ;
+; debouncer:deb_T|jk:ff1|q                       ; 0.378 ; 0.000         ;
++------------------------------------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary                       ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; clk_50MHz                                      ; -3.000 ; -8.612        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -1.403 ; -23.851       ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.403 ; -5.612        ;
+; debouncer:deb_F|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_L|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_P|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_T|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
++------------------------------------------------+--------+---------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                                              ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                                     ; Note                                                          ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+; 235.4 MHz   ; 235.4 MHz       ; debouncer:deb_T|jk:ff1|q                       ;                                                               ;
+; 274.27 MHz  ; 274.27 MHz      ; debouncer:deb_L|jk:ff1|q                       ;                                                               ;
+; 288.18 MHz  ; 288.18 MHz      ; debouncer:deb_F|jk:ff1|q                       ;                                                               ;
+; 334.11 MHz  ; 334.11 MHz      ; debouncer:deb_P|jk:ff1|q                       ;                                                               ;
+; 347.34 MHz  ; 347.34 MHz      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ;                                                               ;
+; 370.51 MHz  ; 250.0 MHz       ; clk_50MHz                                      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 378.64 MHz  ; 378.64 MHz      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ;                                                               ;
+; 379.94 MHz  ; 379.94 MHz      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ;                                                               ;
+; 395.57 MHz  ; 395.57 MHz      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ;                                                               ;
+; 414.25 MHz  ; 414.25 MHz      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ;                                                               ;
+; 549.15 MHz  ; 416.15 MHz      ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; limit due to minimum period restriction (tmin)                ;
+; 1230.01 MHz ; 416.15 MHz      ; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1231.53 MHz ; 416.15 MHz      ; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1245.33 MHz ; 416.15 MHz      ; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
+; 1256.28 MHz ; 416.15 MHz      ; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; limit due to minimum period restriction (tmin)                ;
++-------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                                      ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; debouncer:deb_T|jk:ff1|q                       ; -3.248 ; -10.501       ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -2.648 ; -8.253        ;
+; debouncer:deb_L|jk:ff1|q                       ; -2.646 ; -8.294        ;
+; debouncer:deb_F|jk:ff1|q                       ; -2.470 ; -7.530        ;
+; debouncer:deb_P|jk:ff1|q                       ; -1.993 ; -5.634        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -1.879 ; -3.854        ;
+; clk_50MHz                                      ; -1.699 ; -3.601        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.641 ; -3.434        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.632 ; -3.133        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.528 ; -2.990        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.414 ; -2.905        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.187  ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.188  ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.197  ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.204  ; 0.000         ;
++------------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                                      ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; clk_50MHz                                      ; 0.304 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 0.305 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 0.311 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 0.312 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 0.312 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 0.312 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0.312 ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.327 ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.328 ; 0.000         ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.328 ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.328 ; 0.000         ;
+; debouncer:deb_F|jk:ff1|q                       ; 0.339 ; 0.000         ;
+; debouncer:deb_L|jk:ff1|q                       ; 0.339 ; 0.000         ;
+; debouncer:deb_P|jk:ff1|q                       ; 0.339 ; 0.000         ;
+; debouncer:deb_T|jk:ff1|q                       ; 0.339 ; 0.000         ;
++------------------------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary                        ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; clk_50MHz                                      ; -3.000 ; -8.612        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -1.403 ; -23.851       ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.403 ; -5.612        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.403 ; -5.612        ;
+; debouncer:deb_F|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_L|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_P|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; debouncer:deb_T|jk:ff1|q                       ; -1.403 ; -5.612        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; -1.403 ; -2.806        ;
++------------------------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                                      ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; debouncer:deb_T|jk:ff1|q                       ; -1.189 ; -3.667        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -1.015 ; -1.335        ;
+; debouncer:deb_L|jk:ff1|q                       ; -0.825 ; -2.484        ;
+; debouncer:deb_F|jk:ff1|q                       ; -0.722 ; -2.117        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -0.721 ; -1.327        ;
+; clk_50MHz                                      ; -0.651 ; -1.099        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -0.522 ; -0.777        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -0.510 ; -0.843        ;
+; debouncer:deb_P|jk:ff1|q                       ; -0.453 ; -1.253        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -0.427 ; -0.734        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -0.358 ; -0.546        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.620  ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.621  ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.626  ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.630  ; 0.000         ;
++------------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                                      ;
++------------------------------------------------+-------+---------------+
+; Clock                                          ; Slack ; End Point TNS ;
++------------------------------------------------+-------+---------------+
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0.145 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 0.146 ; 0.000         ;
+; clk_50MHz                                      ; 0.146 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 0.152 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 0.152 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 0.153 ; 0.000         ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 0.153 ; 0.000         ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.155 ; 0.000         ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.156 ; 0.000         ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.156 ; 0.000         ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.156 ; 0.000         ;
+; debouncer:deb_F|jk:ff1|q                       ; 0.166 ; 0.000         ;
+; debouncer:deb_L|jk:ff1|q                       ; 0.166 ; 0.000         ;
+; debouncer:deb_P|jk:ff1|q                       ; 0.166 ; 0.000         ;
+; debouncer:deb_T|jk:ff1|q                       ; 0.166 ; 0.000         ;
++------------------------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary                        ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; clk_50MHz                                      ; -3.000 ; -7.124        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -1.000 ; -17.000       ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.000 ; -4.000        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -1.000 ; -4.000        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.000 ; -4.000        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.000 ; -4.000        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.000 ; -4.000        ;
+; debouncer:deb_F|jk:ff1|q                       ; -1.000 ; -4.000        ;
+; debouncer:deb_L|jk:ff1|q                       ; -1.000 ; -4.000        ;
+; debouncer:deb_P|jk:ff1|q                       ; -1.000 ; -4.000        ;
+; debouncer:deb_T|jk:ff1|q                       ; -1.000 ; -4.000        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; -1.000 ; -2.000        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; -1.000 ; -2.000        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; -1.000 ; -2.000        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; -1.000 ; -2.000        ;
++------------------------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                          ;
++-------------------------------------------------+---------+-------+----------+---------+---------------------+
+; Clock                                           ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack                                ; -3.578  ; 0.145 ; N/A      ; N/A     ; -3.000              ;
+;  Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.123   ; 0.156 ; N/A      ; N/A     ; -1.403              ;
+;  Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.115   ; 0.156 ; N/A      ; N/A     ; -1.403              ;
+;  Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.134   ; 0.156 ; N/A      ; N/A     ; -1.403              ;
+;  Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.116   ; 0.155 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -1.583  ; 0.153 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -2.106  ; 0.146 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -1.835  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -1.699  ; 0.152 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -1.863  ; 0.153 ; N/A      ; N/A     ; -1.403              ;
+;  Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -2.931  ; 0.145 ; N/A      ; N/A     ; -1.403              ;
+;  clk_50MHz                                      ; -1.927  ; 0.146 ; N/A      ; N/A     ; -3.000              ;
+;  debouncer:deb_F|jk:ff1|q                       ; -2.733  ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+;  debouncer:deb_L|jk:ff1|q                       ; -2.925  ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+;  debouncer:deb_P|jk:ff1|q                       ; -2.216  ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+;  debouncer:deb_T|jk:ff1|q                       ; -3.578  ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS                                 ; -69.363 ; 0.0   ; 0.0      ; 0.0     ; -94.195             ;
+;  Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0.000   ; 0.000 ; N/A      ; N/A     ; -2.806              ;
+;  Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0.000   ; 0.000 ; N/A      ; N/A     ; -2.806              ;
+;  Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0.000   ; 0.000 ; N/A      ; N/A     ; -2.806              ;
+;  Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0.000   ; 0.000 ; N/A      ; N/A     ; -2.806              ;
+;  Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; -3.373  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; -4.441  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; -3.622  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; -3.445  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; -3.982  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; -10.407 ; 0.000 ; N/A      ; N/A     ; -23.851             ;
+;  clk_50MHz                                      ; -4.173  ; 0.000 ; N/A      ; N/A     ; -8.612              ;
+;  debouncer:deb_F|jk:ff1|q                       ; -8.500  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  debouncer:deb_L|jk:ff1|q                       ; -9.323  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  debouncer:deb_P|jk:ff1|q                       ; -6.426  ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+;  debouncer:deb_T|jk:ff1|q                       ; -11.671 ; 0.000 ; N/A      ; N/A     ; -5.612              ;
++-------------------------------------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin          ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; a            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; b            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; c            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; d            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; e            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; f            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; g            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; L1           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; L2           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; L3           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; L4           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Lclk         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex0[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex1[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex2[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; hex3[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; trava_led    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_TDO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Input Transition Times                                                          ;
++---------------------+-----------------------+-----------------+-----------------+
+; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+-----------------------+-----------------+-----------------+
+; M0                  ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; M1                  ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; Fumaca              ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; Presenca            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; Calor               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; Luz                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; rst_n               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; clk_50MHz           ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_CONFIG_SEL~ ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_nCONFIG~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_nSTATUS~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_CONF_DONE~  ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
++---------------------+-----------------------+-----------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; a            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; b            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; c            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; d            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; e            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; f            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; g            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; L1           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; L2           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; L3           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; L4           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; Lclk         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex0[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex1[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex2[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0871 V           ; 0.291 V                              ; 0.138 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0871 V          ; 0.291 V                             ; 0.138 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; hex3[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; trava_led    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.25e-09 V                   ; 2.41 V              ; -0.0859 V           ; 0.289 V                              ; 0.136 V                              ; 3.15e-10 s                  ; 4.16e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.25e-09 V                  ; 2.41 V             ; -0.0859 V          ; 0.289 V                             ; 0.136 V                             ; 3.15e-10 s                 ; 4.16e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.39e-08 V                   ; 2.39 V              ; -0.0407 V           ; 0.211 V                              ; 0.121 V                              ; 4.7e-10 s                   ; 5.93e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.39e-08 V                  ; 2.39 V             ; -0.0407 V          ; 0.211 V                             ; 0.121 V                             ; 4.7e-10 s                  ; 5.93e-10 s                 ; No                        ; Yes                       ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; a            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; b            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; c            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; d            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; e            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; f            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; g            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; L1           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; L2           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; L3           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; L4           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; Lclk         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex0[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex0[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex0[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex0[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex0[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex0[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex0[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex1[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex1[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex1[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex1[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex1[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex1[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex1[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex2[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex2[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex2[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex2[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex2[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex2[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex2[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex3[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex3[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex3[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex3[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex3[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.0508 V           ; 0.153 V                              ; 0.187 V                              ; 4.63e-10 s                  ; 4.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.0508 V          ; 0.153 V                             ; 0.187 V                             ; 4.63e-10 s                 ; 4.49e-10 s                 ; Yes                       ; Yes                       ;
+; hex3[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; hex3[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; trava_led    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-06 V                   ; 2.37 V              ; -0.049 V            ; 0.154 V                              ; 0.186 V                              ; 4.63e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-06 V                  ; 2.37 V             ; -0.049 V           ; 0.154 V                             ; 0.186 V                             ; 4.63e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-06 V                   ; 2.36 V              ; -0.0174 V           ; 0.144 V                              ; 0.094 V                              ; 6.44e-10 s                  ; 7.22e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-06 V                  ; 2.36 V             ; -0.0174 V          ; 0.144 V                             ; 0.094 V                             ; 6.44e-10 s                 ; 7.22e-10 s                 ; No                        ; Yes                       ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; a            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; b            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; c            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; d            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; e            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; f            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; g            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; L1           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; L2           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; L3           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; L4           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; Lclk         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex0[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex1[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex2[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.94e-08 V                   ; 2.78 V              ; -0.0444 V           ; 0.25 V                               ; 0.107 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.94e-08 V                  ; 2.78 V             ; -0.0444 V          ; 0.25 V                              ; 0.107 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; hex3[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; trava_led    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 9.95e-08 V                   ; 2.78 V              ; -0.0452 V           ; 0.248 V                              ; 0.108 V                              ; 2.67e-10 s                  ; 2.75e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 9.95e-08 V                  ; 2.78 V             ; -0.0452 V          ; 0.248 V                             ; 0.108 V                             ; 2.67e-10 s                 ; 2.75e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0396 V           ; 0.362 V                              ; 0.108 V                              ; 3.11e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0396 V          ; 0.362 V                             ; 0.108 V                             ; 3.11e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                             ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; clk_50MHz                                      ; clk_50MHz                                      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; clk_50MHz                                      ; 2        ; 2        ; 0        ; 0        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; debouncer:deb_F|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_F|jk:ff1|q                       ; debouncer:deb_F|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; debouncer:deb_L|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_L|jk:ff1|q                       ; debouncer:deb_L|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; debouncer:deb_P|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_P|jk:ff1|q                       ; debouncer:deb_P|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; debouncer:deb_T|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_T|jk:ff1|q                       ; debouncer:deb_T|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; debouncer:deb_F|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_L|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_P|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_T|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 13       ; 0        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                              ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; clk_50MHz                                      ; clk_50MHz                                      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; clk_50MHz                                      ; 2        ; 2        ; 0        ; 0        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; 0        ; 0        ; 0        ; 4        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; debouncer:deb_F|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_F|jk:ff1|q                       ; debouncer:deb_F|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; debouncer:deb_L|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_L|jk:ff1|q                       ; debouncer:deb_L|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; debouncer:deb_P|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_P|jk:ff1|q                       ; debouncer:deb_P|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; debouncer:deb_T|jk:ff1|q                       ; 4        ; 4        ; 0        ; 0        ;
+; debouncer:deb_T|jk:ff1|q                       ; debouncer:deb_T|jk:ff1|q                       ; 7        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 9        ; 0        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 0        ; 1        ; 0        ; 0        ;
+; debouncer:deb_F|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_L|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_P|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; debouncer:deb_T|jk:ff1|q                       ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 2        ; 2        ; 0        ; 0        ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; 13       ; 0        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 163   ; 163  ;
+; Unconstrained Output Ports      ; 29    ; 29   ;
+; Unconstrained Output Port Paths ; 247   ; 247  ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                 ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; Target                                         ; Clock                                          ; Type ; Status      ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q ; Base ; Constrained ;
+; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q ; Base ; Constrained ;
+; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q ; Base ; Constrained ;
+; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q      ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q      ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q      ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q      ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q      ; Base ; Constrained ;
+; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q      ; Base ; Constrained ;
+; clk_50MHz                                      ; clk_50MHz                                      ; Base ; Constrained ;
+; debouncer:deb_F|jk:ff1|q                       ; debouncer:deb_F|jk:ff1|q                       ; Base ; Constrained ;
+; debouncer:deb_L|jk:ff1|q                       ; debouncer:deb_L|jk:ff1|q                       ; Base ; Constrained ;
+; debouncer:deb_P|jk:ff1|q                       ; debouncer:deb_P|jk:ff1|q                       ; Base ; Constrained ;
+; debouncer:deb_T|jk:ff1|q                       ; debouncer:deb_T|jk:ff1|q                       ; Base ; Constrained ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Calor      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Fumaca     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Luz        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; M0         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; M1         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Presenca   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; L1          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L2          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L3          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; a           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; b           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; c           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; g           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; trava_led   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Calor      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Fumaca     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Luz        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; M0         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; M1         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Presenca   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; L1          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L2          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L3          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; L4          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; a           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; b           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; c           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; g           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; hex2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; trava_led   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Mon May  4 20:14:38 2026
+Info: Command: quartus_sta jpaf -c jpaf
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'jpaf.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name debouncer:deb_T|jk:ff1|q debouncer:deb_T|jk:ff1|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q
+    Info (332105): create_clock -period 1.000 -name clk_50MHz clk_50MHz
+    Info (332105): create_clock -period 1.000 -name debouncer:deb_P|jk:ff1|q debouncer:deb_P|jk:ff1|q
+    Info (332105): create_clock -period 1.000 -name debouncer:deb_L|jk:ff1|q debouncer:deb_L|jk:ff1|q
+    Info (332105): create_clock -period 1.000 -name debouncer:deb_F|jk:ff1|q debouncer:deb_F|jk:ff1|q
+    Info (332105): create_clock -period 1.000 -name Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q
+    Info (332105): create_clock -period 1.000 -name Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q
+    Info (332105): create_clock -period 1.000 -name Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q
+    Info (332105): create_clock -period 1.000 -name Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.578
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.578             -11.671 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -2.931             -10.407 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -2.925              -9.323 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -2.733              -8.500 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -2.216              -6.426 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -2.106              -4.441 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -1.927              -4.173 clk_50MHz 
+    Info (332119):    -1.863              -3.982 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -1.835              -3.622 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -1.699              -3.445 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -1.583              -3.373 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.115               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.116               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.123               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.134               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+Info (332146): Worst-case hold slack is 0.339
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.339               0.000 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):     0.340               0.000 clk_50MHz 
+    Info (332119):     0.347               0.000 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):     0.347               0.000 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):     0.347               0.000 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):     0.348               0.000 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.348               0.000 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):     0.362               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.363               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.363               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.363               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.378               0.000 debouncer:deb_F|jk:ff1|q 
+    Info (332119):     0.378               0.000 debouncer:deb_L|jk:ff1|q 
+    Info (332119):     0.378               0.000 debouncer:deb_P|jk:ff1|q 
+    Info (332119):     0.378               0.000 debouncer:deb_T|jk:ff1|q 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -8.612 clk_50MHz 
+    Info (332119):    -1.403             -23.851 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.248
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.248             -10.501 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -2.648              -8.253 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -2.646              -8.294 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -2.470              -7.530 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -1.993              -5.634 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -1.879              -3.854 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -1.699              -3.601 clk_50MHz 
+    Info (332119):    -1.641              -3.434 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -1.632              -3.133 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -1.528              -2.990 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -1.414              -2.905 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.187               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.188               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.197               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.204               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+Info (332146): Worst-case hold slack is 0.304
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.304               0.000 clk_50MHz 
+    Info (332119):     0.305               0.000 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):     0.311               0.000 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):     0.312               0.000 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.312               0.000 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):     0.312               0.000 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):     0.312               0.000 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):     0.327               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.328               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.328               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.328               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.339               0.000 debouncer:deb_F|jk:ff1|q 
+    Info (332119):     0.339               0.000 debouncer:deb_L|jk:ff1|q 
+    Info (332119):     0.339               0.000 debouncer:deb_P|jk:ff1|q 
+    Info (332119):     0.339               0.000 debouncer:deb_T|jk:ff1|q 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -8.612 clk_50MHz 
+    Info (332119):    -1.403             -23.851 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -1.403              -5.612 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.403              -2.806 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.189
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.189              -3.667 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -1.015              -1.335 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -0.825              -2.484 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -0.722              -2.117 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -0.721              -1.327 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -0.651              -1.099 clk_50MHz 
+    Info (332119):    -0.522              -0.777 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -0.510              -0.843 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -0.453              -1.253 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -0.427              -0.734 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -0.358              -0.546 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.620               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.621               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.626               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.630               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+Info (332146): Worst-case hold slack is 0.145
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.145               0.000 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):     0.146               0.000 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):     0.146               0.000 clk_50MHz 
+    Info (332119):     0.152               0.000 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):     0.152               0.000 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):     0.153               0.000 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):     0.153               0.000 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):     0.155               0.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.156               0.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.156               0.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.156               0.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):     0.166               0.000 debouncer:deb_F|jk:ff1|q 
+    Info (332119):     0.166               0.000 debouncer:deb_L|jk:ff1|q 
+    Info (332119):     0.166               0.000 debouncer:deb_P|jk:ff1|q 
+    Info (332119):     0.166               0.000 debouncer:deb_T|jk:ff1|q 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -7.124 clk_50MHz 
+    Info (332119):    -1.000             -17.000 Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q 
+    Info (332119):    -1.000              -4.000 debouncer:deb_F|jk:ff1|q 
+    Info (332119):    -1.000              -4.000 debouncer:deb_L|jk:ff1|q 
+    Info (332119):    -1.000              -4.000 debouncer:deb_P|jk:ff1|q 
+    Info (332119):    -1.000              -4.000 debouncer:deb_T|jk:ff1|q 
+    Info (332119):    -1.000              -2.000 Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.000              -2.000 Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.000              -2.000 Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q 
+    Info (332119):    -1.000              -2.000 Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4939 megabytes
+    Info: Processing ended: Mon May  4 20:14:41 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

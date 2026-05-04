@@ -1,0 +1,884 @@
+Analysis & Synthesis report for jpaf
+Mon May  4 20:14:21 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "Decoder_Num:dec_dz"
+ 12. Port Connectivity Checks: "Seletor_Display:controlador_tela|jk:ff1"
+ 13. Port Connectivity Checks: "Seletor_Display:controlador_tela|jk:ff0"
+ 14. Port Connectivity Checks: "Seletor_Display:controlador_tela"
+ 15. Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_s0"
+ 16. Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_s1"
+ 17. Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_trava"
+ 18. Port Connectivity Checks: "Reg_Trava:modulo_trava"
+ 19. Port Connectivity Checks: "Contador_Sensor:cont_F|Div3:dezenas|jk:ff1"
+ 20. Port Connectivity Checks: "Contador_Sensor:cont_F|Div3:dezenas|jk:ff0"
+ 21. Port Connectivity Checks: "Contador_Sensor:cont_F|Div10:unidades"
+ 22. Port Connectivity Checks: "detector_subida:det_F|jk:ff"
+ 23. Port Connectivity Checks: "debouncer:deb_F|jk:ff3"
+ 24. Port Connectivity Checks: "debouncer:deb_F|jk:ff2"
+ 25. Port Connectivity Checks: "debouncer:deb_F|jk:ff1"
+ 26. Port Connectivity Checks: "Mux:mux_L4"
+ 27. Port Connectivity Checks: "decEmer:modo_emergencia"
+ 28. Port Connectivity Checks: "decManu:modo_manutencao"
+ 29. Port Connectivity Checks: "decDiag:modo_diagnostico"
+ 30. Port Connectivity Checks: "decNormal:modo_normal"
+ 31. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d8"
+ 32. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d7"
+ 33. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d6"
+ 34. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d5"
+ 35. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d4"
+ 36. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d3"
+ 37. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d2"
+ 38. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff3"
+ 39. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff2"
+ 40. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff1"
+ 41. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff0"
+ 42. Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+ 46. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon May  4 20:14:21 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; jpaf                                            ;
+; Top-level Entity Name              ; Main                                            ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 126                                             ;
+;     Total combinational functions  ; 126                                             ;
+;     Dedicated logic registers      ; 65                                              ;
+; Total registers                    ; 65                                              ;
+; Total pins                         ; 49                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; Main               ; jpaf               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
+; Main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v             ;         ;
+; decNormal.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decNormal.v        ;         ;
+; Mux.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Mux.v              ;         ;
+; decDiag.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decDiag.v          ;         ;
+; decManu.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decManu.v          ;         ;
+; decEmer.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decEmer.v          ;         ;
+; jk.v                             ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/jk.v               ;         ;
+; Div10.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div10.v            ;         ;
+; Div_Freq.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div_Freq.v         ;         ;
+; Div3.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div3.v             ;         ;
+; Contador_Sensor.v                ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Contador_Sensor.v  ;         ;
+; debouncer.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/debouncer.v        ;         ;
+; Mux_Contador.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Mux_Contador.v     ;         ;
+; Decoder_Letras.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Decoder_Letras.v   ;         ;
+; Decoder_Num.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Decoder_Num.v      ;         ;
+; detector_subida.v                ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/detector_subida.v  ;         ;
+; Selector_Display.v               ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Selector_Display.v ;         ;
+; Reg_Trava.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Reg_Trava.v        ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 126         ;
+;                                             ;             ;
+; Total combinational functions               ; 126         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 63          ;
+;     -- 3 input functions                    ; 22          ;
+;     -- <=2 input functions                  ; 41          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 126         ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 65          ;
+;     -- Dedicated logic registers            ; 65          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 49          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; rst_n~input ;
+; Maximum fan-out                             ; 65          ;
+; Total fan-out                               ; 647         ;
+; Average fan-out                             ; 2.24        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                ; Entity Name     ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+-----------------+--------------+
+; |Main                        ; 126 (0)             ; 65 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 49   ; 0            ; 0          ; |Main                                              ; Main            ; work         ;
+;    |Contador_Sensor:cont_F|  ; 7 (1)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F                       ; Contador_Sensor ; work         ;
+;       |Div10:unidades|       ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div10:unidades        ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div10:unidades|jk:ff0 ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div10:unidades|jk:ff1 ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div10:unidades|jk:ff2 ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div10:unidades|jk:ff3 ; jk              ; work         ;
+;       |Div3:dezenas|         ; 2 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div3:dezenas          ; Div3            ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div3:dezenas|jk:ff0   ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_F|Div3:dezenas|jk:ff1   ; jk              ; work         ;
+;    |Contador_Sensor:cont_L|  ; 7 (1)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L                       ; Contador_Sensor ; work         ;
+;       |Div10:unidades|       ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div10:unidades        ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div10:unidades|jk:ff0 ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div10:unidades|jk:ff1 ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div10:unidades|jk:ff2 ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div10:unidades|jk:ff3 ; jk              ; work         ;
+;       |Div3:dezenas|         ; 2 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div3:dezenas          ; Div3            ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div3:dezenas|jk:ff0   ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_L|Div3:dezenas|jk:ff1   ; jk              ; work         ;
+;    |Contador_Sensor:cont_P|  ; 7 (1)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P                       ; Contador_Sensor ; work         ;
+;       |Div10:unidades|       ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div10:unidades        ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div10:unidades|jk:ff0 ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div10:unidades|jk:ff1 ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div10:unidades|jk:ff2 ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div10:unidades|jk:ff3 ; jk              ; work         ;
+;       |Div3:dezenas|         ; 2 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div3:dezenas          ; Div3            ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div3:dezenas|jk:ff0   ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_P|Div3:dezenas|jk:ff1   ; jk              ; work         ;
+;    |Contador_Sensor:cont_T|  ; 7 (1)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T                       ; Contador_Sensor ; work         ;
+;       |Div10:unidades|       ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div10:unidades        ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div10:unidades|jk:ff0 ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div10:unidades|jk:ff1 ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div10:unidades|jk:ff2 ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div10:unidades|jk:ff3 ; jk              ; work         ;
+;       |Div3:dezenas|         ; 2 (0)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div3:dezenas          ; Div3            ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div3:dezenas|jk:ff0   ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Contador_Sensor:cont_T|Div3:dezenas|jk:ff1   ; jk              ; work         ;
+;    |Decoder_Num:dec_dz|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Decoder_Num:dec_dz                           ; Decoder_Num     ; work         ;
+;    |Decoder_Num:dec_un|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Decoder_Num:dec_un                           ; Decoder_Num     ; work         ;
+;    |Div_Freq:gerador_clocks| ; 24 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks                      ; Div_Freq        ; work         ;
+;       |Div10:d1|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d1             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d1|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d1|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d1|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d1|jk:ff3      ; jk              ; work         ;
+;       |Div10:d2|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d2             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d2|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d2|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d2|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d2|jk:ff3      ; jk              ; work         ;
+;       |Div10:d3|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d3             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d3|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d3|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d3|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d3|jk:ff3      ; jk              ; work         ;
+;       |Div10:d4|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d4             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d4|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d4|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d4|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d4|jk:ff3      ; jk              ; work         ;
+;       |Div10:d5|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d5             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d5|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d5|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d5|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d5|jk:ff3      ; jk              ; work         ;
+;       |Div10:d6|             ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d6             ; Div10           ; work         ;
+;          |jk:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d6|jk:ff0      ; jk              ; work         ;
+;          |jk:ff1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d6|jk:ff1      ; jk              ; work         ;
+;          |jk:ff2|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d6|jk:ff2      ; jk              ; work         ;
+;          |jk:ff3|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Div_Freq:gerador_clocks|Div10:d6|jk:ff3      ; jk              ; work         ;
+;    |Mux:mux_L1|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_L1                                   ; Mux             ; work         ;
+;    |Mux:mux_L2|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_L2                                   ; Mux             ; work         ;
+;    |Mux:mux_L3|              ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_L3                                   ; Mux             ; work         ;
+;    |Mux:mux_L4|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_L4                                   ; Mux             ; work         ;
+;    |Mux:mux_a|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_a                                    ; Mux             ; work         ;
+;    |Mux:mux_b|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_b                                    ; Mux             ; work         ;
+;    |Mux:mux_c|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_c                                    ; Mux             ; work         ;
+;    |Mux:mux_d|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_d                                    ; Mux             ; work         ;
+;    |Mux:mux_e|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_e                                    ; Mux             ; work         ;
+;    |Mux:mux_f|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_f                                    ; Mux             ; work         ;
+;    |Mux:mux_g|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux:mux_g                                    ; Mux             ; work         ;
+;    |Mux_Contador:mux_d0|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_d0                          ; Mux_Contador    ; work         ;
+;    |Mux_Contador:mux_d1|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_d1                          ; Mux_Contador    ; work         ;
+;    |Mux_Contador:mux_u0|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_u0                          ; Mux_Contador    ; work         ;
+;    |Mux_Contador:mux_u1|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_u1                          ; Mux_Contador    ; work         ;
+;    |Mux_Contador:mux_u2|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_u2                          ; Mux_Contador    ; work         ;
+;    |Mux_Contador:mux_u3|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Mux_Contador:mux_u3                          ; Mux_Contador    ; work         ;
+;    |Reg_Trava:modulo_trava|  ; 2 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Reg_Trava:modulo_trava                       ; Reg_Trava       ; work         ;
+;       |jk:ff_trava|          ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|Reg_Trava:modulo_trava|jk:ff_trava           ; jk              ; work         ;
+;    |debouncer:deb_F|         ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_F                              ; debouncer       ; work         ;
+;       |jk:ff1|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_F|jk:ff1                       ; jk              ; work         ;
+;       |jk:ff2|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_F|jk:ff2                       ; jk              ; work         ;
+;       |jk:ff3|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_F|jk:ff3                       ; jk              ; work         ;
+;    |debouncer:deb_L|         ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_L                              ; debouncer       ; work         ;
+;       |jk:ff1|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_L|jk:ff1                       ; jk              ; work         ;
+;       |jk:ff2|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_L|jk:ff2                       ; jk              ; work         ;
+;       |jk:ff3|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_L|jk:ff3                       ; jk              ; work         ;
+;    |debouncer:deb_P|         ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_P                              ; debouncer       ; work         ;
+;       |jk:ff1|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_P|jk:ff1                       ; jk              ; work         ;
+;       |jk:ff2|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_P|jk:ff2                       ; jk              ; work         ;
+;       |jk:ff3|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_P|jk:ff3                       ; jk              ; work         ;
+;    |debouncer:deb_T|         ; 3 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_T                              ; debouncer       ; work         ;
+;       |jk:ff1|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_T|jk:ff1                       ; jk              ; work         ;
+;       |jk:ff2|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_T|jk:ff2                       ; jk              ; work         ;
+;       |jk:ff3|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|debouncer:deb_T|jk:ff3                       ; jk              ; work         ;
+;    |detector_subida:det_F|   ; 2 (1)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_F                        ; detector_subida ; work         ;
+;       |jk:ff|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_F|jk:ff                  ; jk              ; work         ;
+;    |detector_subida:det_L|   ; 2 (1)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_L                        ; detector_subida ; work         ;
+;       |jk:ff|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_L|jk:ff                  ; jk              ; work         ;
+;    |detector_subida:det_P|   ; 2 (1)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_P                        ; detector_subida ; work         ;
+;       |jk:ff|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_P|jk:ff                  ; jk              ; work         ;
+;    |detector_subida:det_T|   ; 2 (1)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_T                        ; detector_subida ; work         ;
+;       |jk:ff|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|detector_subida:det_T|jk:ff                  ; jk              ; work         ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-------------------------------------------+--------------------------------------+
+; Register name                             ; Reason for Removal                   ;
++-------------------------------------------+--------------------------------------+
+; Seletor_Display:controlador_tela|jk:ff1|q ; Stuck at GND due to stuck port clock ;
+; Seletor_Display:controlador_tela|jk:ff0|q ; Stuck at GND due to stuck port clock ;
+; Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d8|jk:ff2|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d8|jk:ff1|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d8|jk:ff0|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d7|jk:ff2|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d7|jk:ff1|q ; Lost fanout                          ;
+; Div_Freq:gerador_clocks|Div10:d7|jk:ff0|q ; Lost fanout                          ;
+; Total Number of Removed Registers = 10    ;                                      ;
++-------------------------------------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                 ;
++-------------------------------------------+--------------------+--------------------------------------------+
+; Register name                             ; Reason for Removal ; Registers Removed due to This Register     ;
++-------------------------------------------+--------------------+--------------------------------------------+
+; Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q ; Lost Fanouts       ; Div_Freq:gerador_clocks|Div10:d8|jk:ff0|q, ;
+;                                           ;                    ; Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q, ;
+;                                           ;                    ; Div_Freq:gerador_clocks|Div10:d7|jk:ff0|q  ;
++-------------------------------------------+--------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 65    ;
+; Number of registers using Synchronous Clear  ; 39    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Decoder_Num:dec_dz" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; I3   ; Input ; Info     ; Stuck at GND         ;
+; I2   ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Seletor_Display:controlador_tela|jk:ff1"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Seletor_Display:controlador_tela|jk:ff0"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; j     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; k     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "Seletor_Display:controlador_tela" ;
++-------+-------+----------+-----------------------------------+
+; Port  ; Type  ; Severity ; Details                           ;
++-------+-------+----------+-----------------------------------+
+; trava ; Input ; Info     ; Stuck at VCC                      ;
++-------+-------+----------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_s0"                                                                          ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_s1"                                                                          ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reg_Trava:modulo_trava|jk:ff_trava"                                                                       ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; k     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reg_Trava:modulo_trava"                                                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; s1_trava ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; s0_trava ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Contador_Sensor:cont_F|Div3:dezenas|jk:ff1"                                                               ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; k     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Contador_Sensor:cont_F|Div3:dezenas|jk:ff0"                                                               ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; k     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Contador_Sensor:cont_F|Div10:unidades"                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; clk_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "detector_subida:det_F|jk:ff"                                                                              ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:deb_F|jk:ff3"                                                                                   ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:deb_F|jk:ff2"                                                                                   ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:deb_F|jk:ff1"                                                                                   ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "Mux:mux_L4" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; e1   ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decEmer:modo_emergencia"                                                                                 ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; h    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decManu:modo_manutencao"                                                                                 ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; h    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decDiag:modo_diagnostico"                                                                                ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; pd   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decNormal:modo_normal"                                                                                   ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; L4   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d8"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d7"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d6"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d5"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d4"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d3"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d2"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff3"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff2"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff1"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1|jk:ff0"                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q_bar ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Div_Freq:gerador_clocks|Div10:d1"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q0   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q1   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q2   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 49                          ;
+; cycloneiii_ff         ; 65                          ;
+;     SCLR              ; 39                          ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 131                         ;
+;     normal            ; 131                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 41                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 63                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.61                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Mon May  4 20:14:14 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jpaf -c jpaf
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: Main File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decnormal.v
+    Info (12023): Found entity 1: decNormal File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decNormal.v Line: 1
+Warning (12090): Entity "Mux" obtained from "Mux.v" instead of from Quartus Prime megafunction library File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux.v
+    Info (12023): Found entity 1: Mux File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decdiag.v
+    Info (12023): Found entity 1: decDiag File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decDiag.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decmanu.v
+    Info (12023): Found entity 1: decManu File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decManu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decemer.v
+    Info (12023): Found entity 1: decEmer File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decEmer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file jk.v
+    Info (12023): Found entity 1: jk File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/jk.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div10.v
+    Info (12023): Found entity 1: Div10 File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div10.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div_freq.v
+    Info (12023): Found entity 1: Div_Freq File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div_Freq.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div3.v
+    Info (12023): Found entity 1: Div3 File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_sensor.v
+    Info (12023): Found entity 1: Contador_Sensor File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Contador_Sensor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.v
+    Info (12023): Found entity 1: debouncer File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/debouncer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_contador.v
+    Info (12023): Found entity 1: Mux_Contador File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Mux_Contador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_letras.v
+    Info (12023): Found entity 1: Decoder_Letras File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Decoder_Letras.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_num.v
+    Info (12023): Found entity 1: Decoder_Num File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Decoder_Num.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file detector_subida.v
+    Info (12023): Found entity 1: detector_subida File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/detector_subida.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file selector_display.v
+    Info (12023): Found entity 1: Seletor_Display File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Selector_Display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file reg_trava.v
+    Info (12023): Found entity 1: Reg_Trava File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Reg_Trava.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Main.v(40): created implicit net for "L4_mn" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 40
+Info (12127): Elaborating entity "Main" for the top level hierarchy
+Warning (10034): Output port "Lclk" at Main.v(4) has no driver File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 4
+Info (12128): Elaborating entity "Div_Freq" for hierarchy "Div_Freq:gerador_clocks" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 24
+Info (12128): Elaborating entity "Div10" for hierarchy "Div_Freq:gerador_clocks|Div10:d1" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div_Freq.v Line: 9
+Info (12128): Elaborating entity "jk" for hierarchy "Div_Freq:gerador_clocks|Div10:d1|jk:ff0" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Div10.v Line: 20
+Info (12128): Elaborating entity "decNormal" for hierarchy "decNormal:modo_normal" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 39
+Warning (10034): Output port "L4" at decNormal.v(1) has no driver File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/decNormal.v Line: 1
+Info (12128): Elaborating entity "decDiag" for hierarchy "decDiag:modo_diagnostico" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 46
+Info (12128): Elaborating entity "decManu" for hierarchy "decManu:modo_manutencao" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 51
+Info (12128): Elaborating entity "decEmer" for hierarchy "decEmer:modo_emergencia" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 56
+Info (12128): Elaborating entity "Mux" for hierarchy "Mux:mux_a" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 58
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:deb_F" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 79
+Info (12128): Elaborating entity "detector_subida" for hierarchy "detector_subida:det_F" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 80
+Info (12128): Elaborating entity "Contador_Sensor" for hierarchy "Contador_Sensor:cont_F" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 81
+Info (12128): Elaborating entity "Div3" for hierarchy "Contador_Sensor:cont_F|Div3:dezenas" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Contador_Sensor.v Line: 26
+Info (12128): Elaborating entity "Reg_Trava" for hierarchy "Reg_Trava:modulo_trava" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 115
+Info (12128): Elaborating entity "Seletor_Display" for hierarchy "Seletor_Display:controlador_tela" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 121
+Info (12128): Elaborating entity "Mux_Contador" for hierarchy "Mux_Contador:mux_u0" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 133
+Info (12128): Elaborating entity "Decoder_Letras" for hierarchy "Decoder_Letras:dec_letra" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 146
+Info (12128): Elaborating entity "Decoder_Num" for hierarchy "Decoder_Num:dec_un" File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 152
+Info (13014): Ignored 20 buffer(s)
+    Info (13019): Ignored 20 SOFT buffer(s)
+Warning (12241): 28 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Lclk" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 4
+    Warning (13410): Pin "hex1[1]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 7
+    Warning (13410): Pin "hex2[2]" is stuck at VCC File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 8
+    Warning (13410): Pin "hex2[4]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 8
+    Warning (13410): Pin "hex2[5]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 8
+    Warning (13410): Pin "hex3[0]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[1]" is stuck at VCC File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[2]" is stuck at VCC File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[3]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[4]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[5]" is stuck at GND File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+    Warning (13410): Pin "hex3[6]" is stuck at VCC File: C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/Main.v Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/output_files/jpaf.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 175 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 41 output pins
+    Info (21061): Implemented 126 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4845 megabytes
+    Info: Processing ended: Mon May  4 20:14:21 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Arthur/Desktop/pbl-02-circuitos-digitais-master/output_files/jpaf.map.smsg.
+
+
