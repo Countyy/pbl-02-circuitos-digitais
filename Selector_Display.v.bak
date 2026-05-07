@@ -1,0 +1,47 @@
+// Conta 0->1->2->3->0->... a cada borda de subida de 'tick'.
+// Quando 'trava' é alto, o contador congela no valor atual.
+// s1,s0: seletor de qual sensor exibir (00=F, 01=T, 10=P, 11=L)
+// Reset assíncrono via rst_n.
+module Seletor_Display (
+    input  clk,
+    input  rst_n,
+    input  tick,
+    input  trava,
+    input  trava_s1,
+    input  trava_s0,
+    output s1,
+    output s0
+);
+    // Usamos dois FFs JK para contar de 0 a 3 (Gray/binário)
+    // s0 togla a cada tick (quando não travado)
+    // s1 togla quando s0=1 (carry)
+    // Porém quando 'trava' é alto, forçamos J=K=0 (manter estado)
+    // e sobrepomos o valor de trava_s1/trava_s0.
+ 
+    wire j0, k0, j1_w, k1_w;
+    wire n_trava;
+    wire tick_livre;
+ 
+    not u_ntrava (n_trava, trava);
+ 
+    // tick_livre: tick só passa quando não travado
+    and u_tick (tick_livre, tick, n_trava);
+ 
+    // FF0 (s0): J=1, K=1 => toggle a cada tick_livre
+    jk ff0 (
+        .j   (1'b1),
+        .k   (1'b1),
+        .clk (tick_livre),
+        .rst_n(rst_n),
+        .q   (s0)
+    );
+ 
+    // FF1 (s1): togla quando s0=1, ou seja usa s0 como clock
+    jk ff1 (
+        .j   (1'b1),
+        .k   (1'b1),
+        .clk (s0),
+        .rst_n(rst_n),
+        .q   (s1)
+    );
+endmodule

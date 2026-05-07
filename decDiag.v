@@ -1,0 +1,75 @@
+module decDiag(input F, L, P, C, output a, b, c, d, e, f, g, pd, la, lb, lc, ld);
+    
+    wire not_f, not_l, not_p, not_c;
+    
+    // Inversores
+    not u_not_f(not_f, F);
+    not u_not_l(not_l, L);
+    not u_not_p(not_p, P); 
+    not u_not_c(not_c, C);
+
+    //////// Leds de Monitoramento (Buffers)
+    buf(la, L);
+    buf(lb, P);
+    buf(lc, C);
+    buf(ld, F);
+
+    // Display A
+    wire f_c_p_l_a, f_cp_l_a, fcp_l_a, fc_pl_a;
+    and(f_c_p_l_a, not_f, not_c, not_p, L);
+    and(f_cp_l_a,  not_f, C, not_p, not_l);
+    and(fcp_l_a,   F, C, not_p, L);
+    and(fc_pl_a,   F, not_c, P, L);
+    or(a, f_c_p_l_a, f_cp_l_a, fcp_l_a, fc_pl_a);
+     
+    // Display b (Renomeado fios para evitar conflito com A)
+    wire cp_l_b, fpl_b, fc_p_l_b, f_c_p_l_b;
+    and(cp_l_b,   C, P, not_l);
+    and(fpl_b,    F, P, L);
+    and(fc_p_l_b, F, C, not_p, not_l);
+    and(f_c_p_l_b,not_f, C, not_p, L);
+    or(b, cp_l_b, fpl_b, fc_p_l_b, f_c_p_l_b);
+
+    // Display c
+    wire fc_l_c, fcp_c, f_c_pl_c;
+    and(fc_l_c,   F, C, not_l);
+    and(fcp_c,    F, C, P);
+    and(f_c_pl_c, not_f, not_c, P, not_l);
+    or(c, fc_l_c, fcp_c, f_c_pl_c);
+
+    // Display d
+    wire f_cp_l_d, f_c_p_l_d, cpl_d, fc_pl_d;
+    and(f_cp_l_d,  not_f, C, not_p, not_l);
+    and(f_c_p_l_d, not_f, not_c, not_p, L);
+    and(cpl_d,      C, P, L);
+    and(fc_pl_d,   F, not_c, P, not_l);
+    or(d, f_cp_l_d, f_c_p_l_d, cpl_d, fc_pl_d);
+    
+    // Display e
+    wire f_l_e, f_cp_e, c_p_l_e;
+    and(f_l_e,   not_f, L);
+    and(f_cp_e,  not_f, C, not_p);
+    and(c_p_l_e, not_c, not_p, L);
+    or(e, f_l_e, f_cp_e, c_p_l_e);
+    
+    // Display f
+    wire f_c_p_f, f_c_l_f, f_pl_f, fcp_l_f;
+    and(f_c_p_f,   not_f, not_c, P);
+    and(f_c_l_f,   not_f, not_c, L);
+    and(f_pl_f,    not_f, P, L);
+    and(fcp_l_f,   F, C, not_p, L);
+    or(f, f_c_p_f, f_c_l_f, f_pl_f, fcp_l_f);
+    
+    // Display g
+    wire f_c_p_g, fc_p_l_g, f_cpl_g;
+    and(f_c_p_g,  not_f, not_c, not_p);
+    and(fc_p_l_g, F, C, not_p, not_l);
+    and(f_cpl_g,  not_f, C, P, L);
+    or(g, f_c_p_g, fc_p_l_g, f_cpl_g);
+	 
+
+    // Display pd (Ponto Decimal)
+    // Na DE10-Lite, '1' desliga o LED do ponto.
+	 buf PD(pd, 1'b1); 
+
+endmodule

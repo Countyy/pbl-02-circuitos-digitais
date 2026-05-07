@@ -1,0 +1,6 @@
+Module detector_subida(
+input clk;
+output clksubida;)
+wire clk_not;
+not(clk_not, clk);
+and(clksubida, clk, clk_not);
