@@ -1,0 +1,14 @@
+module debouncer (
+    input clk,
+    input rst_n,
+    input ruidoso,
+    output filtrado
+);
+    wire q1, q2, q3;
+
+    jk ff1 (.j(ruidoso), .k(~ruidoso), .clk(clk), .q(q1), .rst_n(rst_n));
+    jk ff2 (.j(q1), .k(~q1), .clk(clk), .q(q2), .rst_n(rst_n));
+    jk ff3 (.j(q2), .k(~q2), .clk(clk), .q(q3), .rst_n(rst_n));
+
+    and (filtrado, q1, q2, q3);
+endmodule

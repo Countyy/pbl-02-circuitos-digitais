@@ -1,0 +1,26 @@
+module Decoder_Letras (
+    input S1, S0,
+    output a, b, c, d, e, f, g
+);
+
+    wire not_S1, not_S0;
+    
+    not inv1 (not_S1, S1);
+    not inv2 (not_S0, S0);
+
+    and and_a (a, not_S1, not_S0);
+
+    wire w_b1;
+    and and_b1 (w_b1, not_S1, S0);
+    not not_b (b, w_b1);
+
+    buf buf_c (c, 1'b1);
+
+    buf buf_d (d, S0);
+
+    buf buf_e (e, 1'b0);
+    buf buf_f (f, 1'b0);
+
+    buf buf_g (g, not_S0);
+
+endmodule

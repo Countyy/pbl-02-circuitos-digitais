@@ -1,0 +1,15 @@
+module decEmer(output a, b, c, d, e, f, g, h, la, lb, lc, ld);
+    buf A(a, 1'b0);
+    buf B(b, 1'b1); 
+    buf C(c, 1'b1);
+    buf D(d, 1'b1);
+    buf E(e, 1'b0);
+    buf F(f, 1'b0);
+    buf G(g, 1'b0);
+    buf H(h, 1'b1);
+    buf lA(la, 1'b0);
+    buf lB(lb, 1'b0);
+    buf lC(lc, 1'b1);
+    buf lD(ld, 1'b0);
+endmodule
+

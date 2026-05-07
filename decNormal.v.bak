@@ -1,0 +1,65 @@
+module decNormal(input F, L, P, C, output a, b, c, d, e, f, g, L1, L2, L3, L4);
+	wire not_F, not_L, not_P, not_C;
+	not not_F_Gate(not_F, F);
+	not not_L_Gate(not_L, L);
+	not not_P_Gate(not_P, P);
+	not not_C_Gate(not_C, C);
+	
+	// Ao final eu coloco not (saida, saida_circuito) devido a logica invertida do display
+	
+	// Display a
+	not(a, F);
+	
+	// Display b
+	wire and_not_f_p_not_l, and_f_c_not_p, display_b;
+	and and_display_b_1(and_not_f_p_not_l, not_F, P, not_L);
+	and and_display_b_2(and_f_c_not_p, F, C, not_P);
+	or or_display_b(display_b, and_not_f_p_not_l, and_f_c_not_p);
+	not(b, display_b);
+	
+	// Display c
+	wire and_not_c_l, display_c;
+	and and_display_c_1(and_not_c_l, not_C, L);
+	or or_display_c(display_c, and_not_f_p_not_l, and_f_c_not_p, and_not_c_l);
+	not(c, display_c);
+	
+	// Display d
+	wire and_not_f_not_p_not_l, and_not_f_c_l, and_f_not_c, display_d;
+	and and_display_d_1(and_not_f_c_l, not_F, C, L);
+	and and_display_d_2(and_f_not_c, F, not_C);
+	and and_display_d_3(and_not_f_not_p_not_l, not_F, not_P, not_L);
+	or or_display_d(display_d, and_not_f_c_l, and_not_f_not_p_not_l, and_f_not_c);
+	not(d, display_d);
+	
+	// Display e
+	wire display_e;
+	or or_display_e(display_e, F, C, not_P, L);
+	not(e, display_e);
+	
+	// Display f
+	wire and_not_p_not_l, display_f;
+	and and_display_f_1(and_not_p_not_l, not_L, not_P);
+	or or_display_f(display_f, F, C, and_not_p_not_l);
+	not(f, display_f);
+	
+	// Display g
+	wire and_not_f_l, display_g;
+	and and_display_g_1(and_not_f_l, not_F, L);
+	or or_display_g(display_g, and_not_f_l, C);
+	not(g, display_g);
+	
+	// LED 1
+	wire and_f_not_c_l, not_f_c_l;
+	and and_led_1_1(and_f_not_c_l, F, not_C, L);
+	and and_led_2_2(not_f_c_l, not_F, C, L);
+	or or_led_1(L1, and_not_f_not_p_not_l, and_f_not_c_l, not_f_c_l);
+	
+	// LED 2
+	and and_led_2_1(L2, not_F, P, not_L);
+	
+	// LED 3
+	wire and_f_not_l, and_c_p_not_l, and_c_not_p_l;
+	and and_led_3_2(and_c_p_not_l, C, P, not_L);
+	and and_led_3_3(and_c_not_p_l, C, not_P, L);
+	or or_led_3(L3, F, and_f_not_l, and_c_p_not_l, and_c_not_p_l);
+endmodule

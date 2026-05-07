@@ -1,0 +1,617 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:deb_T|jk:ff1|q'
+Slack : -2.980
+TNS   : -9.538
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:deb_F|jk:ff1|q'
+Slack : -2.832
+TNS   : -9.425
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:deb_P|jk:ff1|q'
+Slack : -2.772
+TNS   : -8.256
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:deb_L|jk:ff1|q'
+Slack : -2.673
+TNS   : -8.226
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -2.151
+TNS   : -4.738
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -1.896
+TNS   : -3.860
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50MHz'
+Slack : -1.881
+TNS   : -4.310
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -1.872
+TNS   : -3.856
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -1.795
+TNS   : -14.225
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -1.709
+TNS   : -3.621
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -1.663
+TNS   : -4.013
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -1.559
+TNS   : -3.240
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.131
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.134
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.134
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50MHz'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:deb_F|jk:ff1|q'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:deb_L|jk:ff1|q'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:deb_P|jk:ff1|q'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:deb_T|jk:ff1|q'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -8.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -1.403
+TNS   : -32.269
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:deb_F|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:deb_L|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:deb_P|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:deb_T|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:deb_T|jk:ff1|q'
+Slack : -2.705
+TNS   : -8.551
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:deb_F|jk:ff1|q'
+Slack : -2.547
+TNS   : -8.367
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:deb_P|jk:ff1|q'
+Slack : -2.506
+TNS   : -7.312
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:deb_L|jk:ff1|q'
+Slack : -2.425
+TNS   : -7.309
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -1.871
+TNS   : -4.078
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -1.686
+TNS   : -3.354
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -1.658
+TNS   : -3.315
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50MHz'
+Slack : -1.627
+TNS   : -3.664
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -1.612
+TNS   : -11.274
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -1.520
+TNS   : -3.126
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -1.474
+TNS   : -3.486
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -1.377
+TNS   : -2.757
+
+Type  : Slow 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50MHz'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.326
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:deb_F|jk:ff1|q'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:deb_L|jk:ff1|q'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:deb_P|jk:ff1|q'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:deb_T|jk:ff1|q'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -8.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -1.403
+TNS   : -32.269
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_F|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_L|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_P|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_T|jk:ff1|q'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : -1.403
+TNS   : -2.806
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -0.896
+TNS   : -1.528
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:deb_F|jk:ff1|q'
+Slack : -0.864
+TNS   : -2.803
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:deb_T|jk:ff1|q'
+Slack : -0.859
+TNS   : -2.578
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:deb_P|jk:ff1|q'
+Slack : -0.747
+TNS   : -2.108
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:deb_L|jk:ff1|q'
+Slack : -0.710
+TNS   : -2.084
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50MHz'
+Slack : -0.648
+TNS   : -1.087
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -0.583
+TNS   : -1.206
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -0.484
+TNS   : -0.841
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -0.423
+TNS   : -0.662
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -0.420
+TNS   : -0.675
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -0.419
+TNS   : -0.618
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -0.319
+TNS   : -0.494
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.628
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.628
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.629
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.630
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.631
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50MHz'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : 0.155
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:deb_F|jk:ff1|q'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:deb_L|jk:ff1|q'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:deb_P|jk:ff1|q'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:deb_T|jk:ff1|q'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHz'
+Slack : -3.000
+TNS   : -7.124
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d6|jk:ff3|q'
+Slack : -1.000
+TNS   : -23.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d1|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d2|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d3|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d4|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d5|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d7|jk:ff3|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_F|jk:ff1|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_L|jk:ff1|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_P|jk:ff1|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:deb_T|jk:ff1|q'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_F|Div10:unidades|jk:ff0|q'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_L|Div10:unidades|jk:ff0|q'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_P|Div10:unidades|jk:ff0|q'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Contador_Sensor:cont_T|Div10:unidades|jk:ff0|q'
+Slack : -1.000
+TNS   : -2.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_Freq:gerador_clocks|Div10:d8|jk:ff3|q'
+Slack : -1.000
+TNS   : -2.000
+
+------------------------------------------------------------

@@ -1,0 +1,21 @@
+module Main (input Fumaca, Luz, Presenca, Calor, output a, b, c, d, e, f, g, L1, L2, L3, L4);
+	wire not_Luz, not_Presenca;
+	not (not_Luz, Luz);
+	not (not_Presenca, Presenca);
+	decNormal decodificador_modo_normal (
+		.F(Fumaca),
+		.L(not_Luz),
+		.P(not_Presenca),
+		.C(Calor),
+		.a(a),
+		.b(b),
+		.c(c),
+		.d(d),
+		.e(e),
+		.f(f),
+		.g(g),
+		.L1(L1),
+		.L2(L2),
+		.L3(L3),
+	);
+endmodule

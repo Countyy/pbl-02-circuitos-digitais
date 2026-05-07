@@ -1,0 +1,281 @@
+module Main (
+<<<<<<< HEAD
+    input Fumaca, Luz, Presenca, Calor, M1, M0, clk_50MHz,
+    output a, b, c, d, e, f, g, L1, L2, L3, L4, Lclk, // Saídas originais mantidas
+    
+    // Novas saídas para os displays do PBL 2
+    output [6:0] hex0, // Unidades
+    output [6:0] hex1, // Dezenas
+    output [6:0] hex2, // Letra do Sensor
+    output [6:0] hex3, // "C" de Contador
+    output trava_led   // LED para indicar o estouro de limite
+);
+
+    // =========================================================
+    // LÓGICA DO PBL 1 (INTACTA)
+=======
+    // Entradas do PBL 1 e Relógio Base
+    input Fumaca, Luz, Presenca, Calor, M1, M0, clk_50MHz, rst_n,
+    
+    // Saídas Originais do PBL 1
+    output a, b, c, d, e, f, g, L1, L2, L3, L4, Lclk, 
+    
+    // Novas saídas para os displays do PBL 2
+    output [6:0] hex0, // Unidades da contagem
+    output [6:0] hex1, // Dezenas da contagem
+    output [6:0] hex2, // Letra do Sensor atual
+    output [6:0] hex3, // Letra "C" (Contador) fixa
+    output trava_led   // LED indicador de alarme (Limite 20)
+);
+
+    // Fontes Estáticas de Energia (Estrutural)
+    supply1 vcc; 
+    supply0 gnd; 
+
+    // =========================================================
+    // 1. GERAÇÃO DE CLOCKS (Dual-Clock System)
+    // =========================================================
+    wire clk_50Hz; // Relógio para debouncers e lógica interna
+    wire tick_2s;  // Relógio para alternância de telas (0,5 Hz)
+    
+    Div_Freq gerador_clocks (
+        .clk_in(clk_50MHz), 
+        .rst_n(rst_n), 
+        .clk_out(tick_2s),       
+        .clk_50hz(clk_50Hz) 
+    );
+
+    // =========================================================
+    // 2. LÓGICA DO PBL 1 (INTACTA)
+>>>>>>> 1fc15c7 (Trial Mode)
+    // =========================================================
+    wire not_Luz, not_Presenca;
+    not (not_Luz, Luz);
+    not (not_Presenca, Presenca);
+    
+    wire a_mn, b_mn, c_mn, d_mn, e_mn, f_mn, g_mn, L1_mn, L2_mn, L3_mn;
+    wire a_md, b_md, c_md, d_md, e_md, f_md, g_md, L1_md, L2_md, L3_md, L4_md;
+    wire a_mm, b_mm, c_mm, d_mm, e_mm, f_mm, g_mm, L1_mm, L2_mm, L3_mm, L4_mm;
+    wire a_ef, b_ef, c_ef, d_ef, e_ef, f_ef, g_ef, L1_ef, L2_ef, L3_ef, L4_ef;
+
+    decNormal modo_normal (
+        .F(Fumaca), .L(not_Luz), .P(not_Presenca), .C(Calor),
+        .a(a_mn), .b(b_mn), .c(c_mn), .d(d_mn), .e(e_mn), .f(f_mn), .g(g_mn),
+        .L1(L1_mn), .L2(L2_mn), .L3(L3_mn)
+    );
+<<<<<<< HEAD
+    buf (L4_mn, 1'b0); 
+=======
+    buf (L4_mn, gnd); 
+>>>>>>> 1fc15c7 (Trial Mode)
+
+    decDiag modo_diagnostico (
+        .F(Fumaca), .L(not_Luz), .P(not_Presenca), .C(Calor),
+        .a(a_md), .b(b_md), .c(c_md), .d(d_md), .e(e_md), .f(f_md), .g(g_md),
+        .la(L3_md), .lb(L2_md), .lc(L1_md), .ld(L4_md)
+    );
+
+    decManu modo_manutencao (
+        .a(a_mm), .b(b_mm), .c(c_mm), .d(d_mm), .e(e_mm), .f(f_mm), .g(g_mm),
+        .la(L1_mm), .lb(L2_mm), .lc(L3_mm), .ld(L4_mm)
+    );
+
+    decEmer modo_emergencia (
+        .a(a_ef), .b(b_ef), .c(c_ef), .d(d_ef), .e(e_ef), .f(f_ef), .g(g_ef),
+        .la(L1_ef), .lb(L2_ef), .lc(L3_ef), .ld(L4_ef)
+    );
+
+<<<<<<< HEAD
+    // Display
+=======
+>>>>>>> 1fc15c7 (Trial Mode)
+    Mux mux_a (.e1(a_mn), .e2(a_md), .e3(a_mm), .e4(a_ef), .M1(M1), .M0(M0), .s(a));
+    Mux mux_b (.e1(b_mn), .e2(b_md), .e3(b_mm), .e4(b_ef), .M1(M1), .M0(M0), .s(b));
+    Mux mux_c (.e1(c_mn), .e2(c_md), .e3(c_mm), .e4(c_ef), .M1(M1), .M0(M0), .s(c));
+    Mux mux_d (.e1(d_mn), .e2(d_md), .e3(d_mm), .e4(d_ef), .M1(M1), .M0(M0), .s(d));
+    Mux mux_e (.e1(e_mn), .e2(e_md), .e3(e_mm), .e4(e_ef), .M1(M1), .M0(M0), .s(e));
+    Mux mux_f (.e1(f_mn), .e2(f_md), .e3(f_mm), .e4(f_ef), .M1(M1), .M0(M0), .s(f));
+    Mux mux_g (.e1(g_mn), .e2(g_md), .e3(g_mm), .e4(g_ef), .M1(M1), .M0(M0), .s(g));
+
+<<<<<<< HEAD
+    // LEDS
+=======
+>>>>>>> 1fc15c7 (Trial Mode)
+    Mux mux_L1 (.e1(L1_mn), .e2(L1_md), .e3(L1_mm), .e4(L1_ef), .M1(M1), .M0(M0), .s(L1));
+    Mux mux_L2 (.e1(L2_mn), .e2(L2_md), .e3(L2_mm), .e4(L2_ef), .M1(M1), .M0(M0), .s(L2));
+    Mux mux_L3 (.e1(L3_mn), .e2(L3_md), .e3(L3_mm), .e4(L3_ef), .M1(M1), .M0(M0), .s(L3));
+    Mux mux_L4 (.e1(L4_mn), .e2(L4_md), .e3(L4_mm), .e4(L4_ef), .M1(M1), .M0(M0), .s(L4));
+<<<<<<< HEAD
+     
+    wire LclkJK;
+    // TESTE
+    Div_Freq meu_divisor (
+        .clk_in(clk_50MHz), 
+        .clk_out(LclkJK)
+    );
+     
+    jk ffteste (
+        .j(1'b1), 
+        .k(1'b1), 
+        .clk(LclkJK), 
+        .q(Lclk),
+        .rst_n(1'b1)
+    );
+
+    // =========================================================
+    // LÓGICA DO PBL 2 (TESTE DO SENSOR DE FUMAÇA FIXO)
+    // =========================================================
+
+    wire [3:0] u_f; // Fios da Unidade da Fumaça
+    wire [1:0] d_f; // Fios da Dezena da Fumaça
+    wire chegou_20_f;
+
+    // 1. Contador da Fumaça (Reset em 1'b1 para não interferir agora)
+    Contador_Sensor sensor_fumaca (
+        .sensor_in(Fumaca),
+        .reset(1'b1), 
+        .u3(u_f[3]), .u2(u_f[2]), .u1(u_f[1]), .u0(u_f[0]),
+        .d1(d_f[1]), .d0(d_f[0]),
+        .estourou(chegou_20_f)
+    );
+
+    // Liga o LED de trava quando chega em 20
+    buf (trava_led, chegou_20_f);
+
+    // 2. Multiplexadores das Unidades (Usando o novo nome Mux_Contador e seletores em 11)
+    wire [3:0] mux_u_out;
+    Mux_Contador mux_u0 (.e3(u_f[0]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_u_out[0]));
+    Mux_Contador mux_u1 (.e3(u_f[1]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_u_out[1]));
+    Mux_Contador mux_u2 (.e3(u_f[2]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_u_out[2]));
+    Mux_Contador mux_u3 (.e3(u_f[3]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_u_out[3]));
+
+    // 3. Multiplexadores das Dezenas (Usando o novo nome Mux_Contador e seletores em 11)
+    wire [1:0] mux_d_out;
+    Mux_Contador mux_d0 (.e3(d_f[0]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_d_out[0]));
+    Mux_Contador mux_d1 (.e3(d_f[1]), .e2(1'b0), .e1(1'b0), .e0(1'b0), .M1(1'b1), .M0(1'b1), .s(mux_d_out[1]));
+
+    // 4. Decodificadores para os Displays
+    
+    // HEX0: Unidades
+    Decoder_Num dec_u (
+        .I3(mux_u_out[3]), .I2(mux_u_out[2]), .I1(mux_u_out[1]), .I0(mux_u_out[0]),
+        .a(hex0[0]), .b(hex0[1]), .c(hex0[2]), .d(hex0[3]), .e(hex0[4]), .f(hex0[5]), .g(hex0[6])
+    );
+
+    // HEX1: Dezenas (I3 e I2 aterrados em 0)
+    Decoder_Num dec_d (
+        .I3(1'b0), .I2(1'b0), .I1(mux_d_out[1]), .I0(mux_d_out[0]),
+        .a(hex1[0]), .b(hex1[1]), .c(hex1[2]), .d(hex1[3]), .e(hex1[4]), .f(hex1[5]), .g(hex1[6])
+    );
+
+    // HEX2: Letra do Sensor (Fixo no seletor 11 -> 'F')
+    Decoder_Letras dec_l (
+        .S1(1'b1), .S0(1'b1),
+        .a(hex2[0]), .b(hex2[1]), .c(hex2[2]), .d(hex2[3]), .e(hex2[4]), .f(hex2[5]), .g(hex2[6])
+    );
+
+    // HEX3: Letra "C" Fixa (Lógica Active-Low)
+    assign hex3 = 7'b1000010;
+=======
+
+
+    // =========================================================
+    // 3. PIPELINES DO PBL 2 (DEBOUNCE -> BORDA -> CONTA)
+    // =========================================================
+    
+    // --- SENSOR F ---
+    wire F_limpo, F_pulso, marcou_F;
+    wire [3:0] uni_F; wire [1:0] dez_F;
+    debouncer deb_F (.clk(clk_50Hz), .rst_n(rst_n), .ruidoso(Fumaca), .filtrado(F_limpo));
+    detector_subida det_F (.clk(clk_50Hz), .rst_n(rst_n), .entrada(F_limpo), .saida(F_pulso));
+    Contador_Sensor cont_F (.sensor_in(F_pulso), .reset(rst_n), .u3(uni_F[3]), .u2(uni_F[2]), .u1(uni_F[1]), .u0(uni_F[0]), .d1(dez_F[1]), .d0(dez_F[0]), .marcou_20(marcou_F));
+
+    // --- SENSOR T ---
+    wire T_limpo, T_pulso, marcou_T;
+    wire [3:0] uni_T; wire [1:0] dez_T;
+    debouncer deb_T (.clk(clk_50Hz), .rst_n(rst_n), .ruidoso(Calor), .filtrado(T_limpo));
+    detector_subida det_T (.clk(clk_50Hz), .rst_n(rst_n), .entrada(T_limpo), .saida(T_pulso));
+    Contador_Sensor cont_T (.sensor_in(T_pulso), .reset(rst_n), .u3(uni_T[3]), .u2(uni_T[2]), .u1(uni_T[1]), .u0(uni_T[0]), .d1(dez_T[1]), .d0(dez_T[0]), .marcou_20(marcou_T));
+
+    // --- SENSOR P ---
+    wire P_limpo, P_pulso, marcou_P;
+    wire [3:0] uni_P; wire [1:0] dez_P;
+    debouncer deb_P (.clk(clk_50Hz), .rst_n(rst_n), .ruidoso(Presenca), .filtrado(P_limpo));
+    detector_subida det_P (.clk(clk_50Hz), .rst_n(rst_n), .entrada(P_limpo), .saida(P_pulso));
+    Contador_Sensor cont_P (.sensor_in(P_pulso), .reset(rst_n), .u3(uni_P[3]), .u2(uni_P[2]), .u1(uni_P[1]), .u0(uni_P[0]), .d1(dez_P[1]), .d0(dez_P[0]), .marcou_20(marcou_P));
+
+    // --- SENSOR L ---
+    wire L_limpo, L_pulso, marcou_L;
+    wire [3:0] uni_L; wire [1:0] dez_L;
+    debouncer deb_L (.clk(clk_50Hz), .rst_n(rst_n), .ruidoso(Luz), .filtrado(L_limpo));
+    detector_subida det_L (.clk(clk_50Hz), .rst_n(rst_n), .entrada(L_limpo), .saida(L_pulso));
+    Contador_Sensor cont_L (.sensor_in(L_pulso), .reset(rst_n), .u3(uni_L[3]), .u2(uni_L[2]), .u1(uni_L[1]), .u0(uni_L[0]), .d1(dez_L[1]), .d0(dez_L[0]), .marcou_20(marcou_L));
+
+
+    // =========================================================
+    // 4. TRAVAMENTO E SELEÇÃO DE TELA
+    // =========================================================
+    wire trava_ativa, trava_s1, trava_s0;
+    wire tela_s1, tela_s0;
+
+    Reg_Trava modulo_trava (
+        .clk(clk_50Hz), .rst_n(rst_n), 
+        .marcou_F(marcou_F), .marcou_T(marcou_T), .marcou_P(marcou_P), .marcou_L(marcou_L), 
+        .trava_ativa(trava_ativa), .s1_trava(trava_s1), .s0_trava(trava_s0)
+    );
+
+    Seletor_Display controlador_tela (
+        .clk(clk_50Hz), .rst_n(rst_n), .tick(tick_2s), 
+        .trava(trava_ativa), .trava_s1(trava_s1), .trava_s0(trava_s0), 
+        .s1(tela_s1), .s0(tela_s0)
+    );
+
+
+    // =========================================================
+    // 5. MUX DE DADOS E DISPLAYS (ESTRUTURAL)
+    // =========================================================
+    wire [3:0] display_uni;
+    wire [1:0] display_dez;
+
+    // Seleção de qual contador aparece na unidade/dezena
+    Mux_Contador mux_u0 (.s1(tela_s1), .s0(tela_s0), .e0(uni_F[0]), .e1(uni_T[0]), .e2(uni_P[0]), .e3(uni_L[0]), .saida(display_uni[0]));
+    Mux_Contador mux_u1 (.s1(tela_s1), .s0(tela_s0), .e0(uni_F[1]), .e1(uni_T[1]), .e2(uni_P[1]), .e3(uni_L[1]), .saida(display_uni[1]));
+    Mux_Contador mux_u2 (.s1(tela_s1), .s0(tela_s0), .e0(uni_F[2]), .e1(uni_T[2]), .e2(uni_P[2]), .e3(uni_L[2]), .saida(display_uni[2]));
+    Mux_Contador mux_u3 (.s1(tela_s1), .s0(tela_s0), .e0(uni_F[3]), .e1(uni_T[3]), .e2(uni_P[3]), .e3(uni_L[3]), .saida(display_uni[3]));
+
+    Mux_Contador mux_d0 (.s1(tela_s1), .s0(tela_s0), .e0(dez_F[0]), .e1(dez_T[0]), .e2(dez_P[0]), .e3(dez_L[0]), .saida(display_dez[0]));
+    Mux_Contador mux_d1 (.s1(tela_s1), .s0(tela_s0), .e0(dez_F[1]), .e1(dez_T[1]), .e2(dez_P[1]), .e3(dez_L[1]), .saida(display_dez[1]));
+
+    // HEX2: Letra do Sensor (F, T, P ou L)
+    Decoder_Letras dec_letra (
+        .S1(tela_s1), .S0(tela_s0), 
+        .a(hex2[0]), .b(hex2[1]), .c(hex2[2]), .d(hex2[3]), .e(hex2[4]), .f(hex2[5]), .g(hex2[6])
+    );
+
+    // HEX0: Valor da Unidade
+    Decoder_Num dec_un (
+        .I3(display_uni[3]), .I2(display_uni[2]), .I1(display_uni[1]), .I0(display_uni[0]), 
+        .a(hex0[0]), .b(hex0[1]), .c(hex0[2]), .d(hex0[3]), .e(hex0[4]), .f(hex0[5]), .g(hex0[6])
+    );
+    
+    // HEX1: Valor da Dezena
+    wire [3:0] dez_4bits;
+    buf b_d0 (dez_4bits[0], display_dez[0]);
+    buf b_d1 (dez_4bits[1], display_dez[1]);
+    buf b_d2 (dez_4bits[2], gnd); 
+    buf b_d3 (dez_4bits[3], gnd); 
+    Decoder_Num dec_dz (
+        .I3(dez_4bits[3]), .I2(dez_4bits[2]), .I1(dez_4bits[1]), .I0(dez_4bits[0]), 
+        .a(hex1[0]), .b(hex1[1]), .c(hex1[2]), .d(hex1[3]), .e(hex1[4]), .f(hex1[5]), .g(hex1[6])
+    );
+
+    // HEX3: Letra "C" (Fixa)
+    buf b_c0(hex3[0], gnd); buf b_c1(hex3[1], vcc); buf b_c2(hex3[2], vcc); 
+    buf b_c3(hex3[3], gnd); buf b_c4(hex3[4], gnd); buf b_c5(hex3[5], gnd); 
+    buf b_c6(hex3[6], vcc);
+
+    // Alarme Visual
+    buf b_led_trava (trava_led, trava_ativa);
+>>>>>>> 1fc15c7 (Trial Mode)
+
+endmodule

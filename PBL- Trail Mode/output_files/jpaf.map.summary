@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon May  4 14:46:31 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : jpaf
+Top-level Entity Name : Main
+Family : MAX 10
+Total logic elements : 140
+    Total combinational functions : 140
+    Dedicated logic registers : 77
+Total registers : 77
+Total pins : 49
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
